@@ -10,12 +10,9 @@ const StrategyForm = ({ onSuccess }) => {
   const successMessage = 'The strategy was submitted successfully.';
   const errorMessage = 'The strategy could not be submitted.';
 
-  /* const displayMessageModal = (feedbackMessage) => {
-      if (feedbackMessage == "The strategy was submitted successfully.") {
-
-      }
-  } */
-
+  const handleCloseModal = () => {
+    setShowModal(false);
+  }
   // Prevent reloading the page after submitting form
   const handleSubmitForm = async (e) => {
     e.preventDefault();
@@ -50,15 +47,19 @@ const StrategyForm = ({ onSuccess }) => {
   return (
     <>
     <form className="strategy-form" onSubmit={handleSubmitForm}>
-        <h1>Create New Strategy</h1>
-        <label>Strategy Title</label>
-        {/* Updates corresponding state variable when input value is changed */}
-        <input 
-          type="text" 
-          value={strategyTitle} 
-          onChange={(e) => setStrategyTitle(e.target.value)} 
-          placeholder="Enter your strategy title"
-          required/>
+        <h1 className="heading">Create New Strategy</h1>
+        <div className="input-container">
+          <label>Strategy Title</label>
+          {/* Updates corresponding state variable when input value is changed */}
+          <input 
+            className="title-box"
+            type="text" 
+            value={strategyTitle} 
+            onChange={(e) => setStrategyTitle(e.target.value)} 
+            placeholder="Enter your strategy title"
+            required/>
+        </div>
+        <div className="input-container">
         <label>Comment</label>
         <textarea 
           className="comment-box"
@@ -66,13 +67,14 @@ const StrategyForm = ({ onSuccess }) => {
           onChange={(e) => setComment(e.target.value)}
           placeholder="Describe your strategy in detail"
           required />
+        </div>
         <button type="submit" className="submit-button">Submit</button>
         {showModal && (
           <MessageModal 
             feedbackMessage={feedbackMessage}
             errorMessage={errorMessage}
             successMessage={successMessage}
-            onClose={() => setShowModal(false)}
+            onClose={handleCloseModal}
           /> )}
       </form>
     </>

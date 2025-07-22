@@ -8,9 +8,16 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  /* position: fixed;
+  /*
+  position: fixed;
   top: 100px;
   right: 50px; */
+  
+}
+
+.title-box {
+  min-width: 300px;
+
 }
 
 .comment-box {
@@ -32,4 +39,12 @@
 .submit-button:hover {
   width: 83px;
   height: 42px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 30px;
 }
