@@ -5,12 +5,14 @@
   overflow-y: auto;
   padding-right: 2rem;
   box-sizing: content-box;
+  margin-top: 50px;
 }
 
 .strategies {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
 }
 
 .strategy {
