@@ -17,11 +17,11 @@ const StrategyForm = ({ onSuccess }) => {
   const handleSubmitForm = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/strategies', {
+      const response = await fetch('http://localhost:8000/strategies', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          strategyTitle,
+          title: strategyTitle,
           comment,
         }),
       });

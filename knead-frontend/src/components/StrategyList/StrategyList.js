@@ -27,9 +27,9 @@ const StrategyList = ({refresh}) => {
   useEffect(() => {
     const fetchStrategies = async () => {
       try {
-        const response = await fetch('http://localhost:3001/strategies');
+        const response = await fetch('http://localhost:8000/strategies');
         const data = await response.json();
-        setStrategies(data);
+        setStrategies(data.strategies);
       } catch (error) {
           console.error("Error fetching strategies: ", error);
       };
@@ -47,7 +47,7 @@ const StrategyList = ({refresh}) => {
             <li key={strategy.id} className="strategy">
               <strong>Strategy {index + 1}</strong>
               <br />
-              Title: {strategy.strategyTitle}
+              Title: {strategy.title}
               <br />
               Comment: {strategy.comment}
               <br />
