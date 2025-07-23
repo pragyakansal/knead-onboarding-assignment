@@ -25,8 +25,11 @@ class Comment(BaseModel):
 class Strategy(BaseModel):
     id: UUID | None = None
     title: str
-    description: str | None = None
-    comments: List[Comment] | None = None
+    # Changed to comment for now, will update if needed after clarification
+    comment: str
+    
+    #description: str | None = None
+    #comments: List[Comment] | None = None
 
 strategies = []
 
