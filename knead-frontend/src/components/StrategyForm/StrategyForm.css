@@ -1,0 +1,50 @@
+.strategy-form {
+  background-color: black;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  width: fit-content;
+  height: fit-content;
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /*
+  position: fixed;
+  top: 100px;
+  right: 50px; */
+  
+}
+
+.title-box {
+  min-width: 300px;
+
+}
+
+.comment-box {
+  min-width: 300px;
+  max-width: 400px;
+  max-height: 300px;
+  min-height: 100px;
+}
+
+.submit-button {
+  border-radius: 25px;
+  background-color: rgb(9, 193, 107);
+  width: 80px;
+  height: 40px;
+  color: white;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  width: 83px;
+  height: 42px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}

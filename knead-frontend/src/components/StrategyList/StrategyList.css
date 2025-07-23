@@ -1,0 +1,44 @@
+.strategies-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 2rem;
+  box-sizing: content-box;
+  margin-top: 50px;
+}
+
+.strategies {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.strategy {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 1px solid black;
+  gap: 10px;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  padding: none;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.like-button-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.like-button-icon:hover {
+  width: 35px;
+  height: 35px;
+}
