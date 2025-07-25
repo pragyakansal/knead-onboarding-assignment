@@ -2,7 +2,7 @@ from typing import List
 
 from fastapi import FastAPI, HTTPException
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
+from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from uuid import UUID, uuid4
@@ -26,12 +26,15 @@ class Strategy(BaseModel):
     id: UUID | None = None
     title: str
     # Changed to comment for now, will update if needed after clarification
-    comment: str
-    
+    comment: str | None = None
     #description: str | None = None
     #comments: List[Comment] | None = None
 
 strategies = []
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request, exc):
+    return PlainTextResponse(str(exc), status_code=400)
 
 @app.get("/strategies")
 def getStrategies():
